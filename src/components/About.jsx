@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { FaGraduationCap, FaBriefcase, FaCode, FaServer, FaDownload } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import PageTransition from './common/PageTransition';
+import { getAssetPath } from '../utils/assetHelpers';
 
 const About = () => {
   const [isDownloading, setIsDownloading] = useState(false);
@@ -11,10 +12,17 @@ const About = () => {
     try {
       setIsDownloading(true);
       setDownloadError(null);
-      const response = await fetch('/assets/pdf/Mohammed_Thaha_Resume.pdf');
+      const resumePath = getAssetPath('/assets/pdf/Mohammed_Thaha_Resume.pdf');
+      const response = await fetch(resumePath, {
+        headers: {
+          'Content-Type': 'application/pdf',
+        },
+      });
+      
       if (!response.ok) {
         throw new Error('Failed to fetch resume');
       }
+      
       const blob = await response.blob();
       const url = window.URL.createObjectURL(blob);
       const link = document.createElement('a');
@@ -67,9 +75,13 @@ const About = () => {
             >
               <div className="absolute inset-0 bg-blue-500 rounded-xl rotate-6 group-hover:rotate-12 transition-transform duration-300"></div>
               <img
-                src="/assets/images/profile_pic.jpg"
+                src={getAssetPath('/assets/images/profile_pic.jpg')}
                 alt="Mohammed Thaha"
-                className="w-64 h-64 object-cover rounded-xl relative z-10 group-hover:scale-[1.02] transition-transform duration-300"
+                className="w-64 h-64 object-cover rounded-xl relative z-10"
+                onError={(e) => {
+                  e.target.src = getAssetPath('/assets/images/placeholder.jpg');
+                  e.target.onerror = null;
+                }}
               />
             </motion.div>
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import PageTransition from './common/PageTransition';
 import BadgeSection from './common/BadgeSection';
+import { getAssetPath } from '../utils/assetHelpers';
 
 const Achievements = () => {
   const certifications = {
@@ -49,27 +50,52 @@ const Achievements = () => {
         id: 'ds-cert',
         title: 'Data Science with Python Bootcamp Certificate',
         description: 'Comprehensive certification in modern web development technologies including Node.js, Express, MongoDB, and cloud infrastructure.',
-        pdfPath: '/assets/pdf/DSA.pdf'
+        pdfPath: getAssetPath('/assets/pdf/DSA.pdf')
       },
       {
         id: 'react-cert',
         title: 'React Bootcamp Certificate',
         description: 'Advanced certification in backend development focusing on scalable architectures, API design, and database optimization.',
-        pdfPath: '/assets/pdf/React.pdf'
+        pdfPath: getAssetPath('/assets/pdf/React.pdf')
       },
       {
         id: 'node-cert',
         title: 'Backend Development Specialization',
         description: 'Advanced certification in backend development focusing on scalable architectures, API design, and database optimization.',
-        pdfPath: '/assets/pdf/Node.pdf'
+        pdfPath: getAssetPath('/assets/pdf/Node.pdf')
       },
       {
         id: 'sql-cert',
         title: 'Backend Development Specialization',
         description: 'Advanced certification in backend development focusing on scalable architectures, API design, and database optimization.',
-        pdfPath: '/assets/pdf/Sql.pdf'
+        pdfPath: getAssetPath('/assets/pdf/Sql.pdf')
       }
     ]
+  };
+
+  // Update the PDF viewer component
+  const PDFViewer = ({ pdfPath }) => {
+    return (
+      <div className="w-full h-[300px] rounded-lg overflow-hidden">
+        <object
+          data={pdfPath}
+          type="application/pdf"
+          className="w-full h-full"
+          style={{ pointerEvents: 'none' }}
+        >
+          <p>Your browser does not support PDFs. 
+            <a 
+              href={pdfPath}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-400 hover:text-blue-500 ml-1"
+            >
+              Download the PDF
+            </a>
+          </p>
+        </object>
+      </div>
+    );
   };
 
   return (
@@ -110,18 +136,7 @@ const Achievements = () => {
                   <div className="flex flex-col md:flex-row gap-8">
                     {/* PDF Preview - Left Side */}
                     <div className="w-full md:w-1/2">
-                      <div className="w-full h-[300px] rounded-lg overflow-hidden">
-                        <object
-                          data={cert.pdfPath}
-                          type="application/pdf"
-                          className="w-full h-full"
-                          style={{ pointerEvents: 'none' }}
-                        >
-                          <p>Your browser does not support PDFs. 
-                            <a href={cert.pdfPath}>Download the PDF</a>.
-                          </p>
-                        </object>
-                      </div>
+                      <PDFViewer pdfPath={cert.pdfPath} />
                     </div>
 
                     {/* Certificate Details - Right Side */}

@@ -14,6 +14,7 @@ import { VscCode } from 'react-icons/vsc';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import PageTransition from './common/PageTransition';
+import { getAssetPath } from '../utils/assetHelpers';
 
 const Home = () => {
   const [isDownloading, setIsDownloading] = useState(false);
@@ -24,36 +25,30 @@ const Home = () => {
     setDownloadError(null);
     
     try {
-      // Use the correct path relative to the public directory
-      const resumePath = process.env.PUBLIC_URL + '/assets/pdf/Mohammed_Thaha_Resume.pdf';
-      
-      const response = await fetch(resumePath);
+      const resumePath = getAssetPath('/assets/pdf/Mohammed_Thaha_Resume.pdf');
+      const response = await fetch(resumePath, {
+        headers: {
+          'Content-Type': 'application/pdf',
+        },
+      });
       
       if (!response.ok) {
         throw new Error('Resume file not found');
       }
       
-      // Get the blob from the response
       const blob = await response.blob();
-      
-      // Create a URL for the blob
       const url = window.URL.createObjectURL(blob);
-      
-      // Create a temporary link and trigger download
       const link = document.createElement('a');
       link.href = url;
       link.download = 'Mohammed Thaha CV.pdf';
       document.body.appendChild(link);
       link.click();
-      
-      // Clean up
       document.body.removeChild(link);
       window.URL.revokeObjectURL(url);
       setDownloadError(null);
     } catch (error) {
       console.error('Error downloading resume:', error);
       setDownloadError('Failed to download resume. Please try again later.');
-      alert('Sorry, the resume file is currently unavailable. Please try again later.');
     } finally {
       setIsDownloading(false);
     }
@@ -159,21 +154,21 @@ const Home = () => {
       id: 'billbizz',
       title: 'BillBizz',
       description: 'Multi-tenant ERP Solution with comprehensive business management features.',
-      image: '/assets/images/BBDash.png',
+      image: getAssetPath('/assets/images/BBDash.png'),
       technologies: ['Node.js', 'Express', 'MongoDB']
     },
     {
       id: 'gallery-vision',
       title: 'Gallery Vision',
       description: 'YouTube revenue management system with multi-currency support.',
-      image: '/assets/images/GvDash.png',
+      image: getAssetPath('/assets/images/GvDash.png'),
       technologies: ['Node.js', 'Express', 'MongoDB']
     },
     {
       id: 'sewnex',
       title: 'Sewnex',
       description: 'Business management platform for textile industry.',
-      image: '/assets/images/SewDash.png',
+      image: getAssetPath('/assets/images/SewDash.png'),
       technologies: ['Node.js', 'Express', 'MongoDB']
     }
   ];
