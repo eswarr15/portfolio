@@ -1,4 +1,4 @@
-<h1 align="center">Mohammed Thaha's Portfolio</h1>
+<!-- <h1 align="center">Mohammed Thaha's Portfolio</h1>
 
 <p align="center">
   Backend Engineer specializing in enterprise solutions and cloud infrastructure
@@ -64,4 +64,4 @@ For any inquiries or opportunities, feel free to reach out:
 - GitHub: [@MohdThaha](https://github.com/MohdThaha)
 
 ---
-<p align="center">Made with ❤️ by Mohammed Thaha</p>
+<p align="center">Made with ❤️ by Mohammed Thaha</p> -->
