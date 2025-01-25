@@ -4,14 +4,11 @@ import { Link } from 'react-router-dom';
 import { FiGithub, FiLinkedin, FiMail } from 'react-icons/fi';
 import Slider from 'react-slick';
 import { 
-  FaNodeJs, FaPython, FaAws, FaDocker, FaLinux, FaArrowRight, FaDownload, FaGithub
+  FaNodeJs, FaAws, FaDocker, FaLinux, FaArrowRight, FaDownload, FaGithub
 } from 'react-icons/fa';
 import { 
-  SiExpress, SiMongodb, SiPostgresql, SiRedis, SiGraphql, SiKubernetes, 
-  SiJenkins, SiTerraform, SiNginx, SiDjango, SiMysql, SiElasticsearch, 
-  SiAmazons3, SiAmazonec2, SiGithubactions, SiSonarqube, SiGrafana, 
-  SiPrometheus, SiAnsible, SiPostman, SiJira, SiVisualstudio, SiJsonwebtokens, SiJest, SiSwagger,
-  SiAuth0, SiMocha, SiChai
+  SiExpress, SiMongodb, SiPostgresql, SiRedis, SiJenkins, SiNginx, SiMysql, SiPostman, SiJira, 
+  SiJsonwebtokens, SiJest, SiSwagger
 } from 'react-icons/si';
 import { VscCode } from 'react-icons/vsc';
 import "slick-carousel/slick/slick.css";
@@ -22,26 +19,41 @@ const Home = () => {
   const [isDownloading, setIsDownloading] = useState(false);
   const [downloadError, setDownloadError] = useState(null);
 
-  const handleDownloadResume = async () => {
+  const handleDownload = async () => {
+    setIsDownloading(true);
+    setDownloadError(null);
+    
     try {
-      setIsDownloading(true);
-      setDownloadError(null);
-      const response = await fetch('/Mohammed Thaha CV.pdf');
+      // Use the correct path relative to the public directory
+      const resumePath = process.env.PUBLIC_URL + '/assets/pdf/Mohammed_Thaha_Resume.pdf';
+      
+      const response = await fetch(resumePath);
+      
       if (!response.ok) {
-        throw new Error('Failed to fetch resume');
+        throw new Error('Resume file not found');
       }
+      
+      // Get the blob from the response
       const blob = await response.blob();
+      
+      // Create a URL for the blob
       const url = window.URL.createObjectURL(blob);
+      
+      // Create a temporary link and trigger download
       const link = document.createElement('a');
       link.href = url;
       link.download = 'Mohammed Thaha CV.pdf';
       document.body.appendChild(link);
       link.click();
+      
+      // Clean up
       document.body.removeChild(link);
       window.URL.revokeObjectURL(url);
+      setDownloadError(null);
     } catch (error) {
       console.error('Error downloading resume:', error);
-      setDownloadError('Failed to download resume');
+      setDownloadError('Failed to download resume. Please try again later.');
+      alert('Sorry, the resume file is currently unavailable. Please try again later.');
     } finally {
       setIsDownloading(false);
     }
@@ -141,27 +153,27 @@ const Home = () => {
     ]
   };
 
-  // Add featured projects data
+  // Update featured projects with correct image paths
   const featuredProjects = [
     {
       id: 'billbizz',
       title: 'BillBizz',
       description: 'Multi-tenant ERP Solution with comprehensive business management features.',
-      image: '/BBDash.png',
+      image: '/assets/images/BBDash.png',
       technologies: ['Node.js', 'Express', 'MongoDB']
     },
     {
       id: 'gallery-vision',
       title: 'Gallery Vision',
       description: 'YouTube revenue management system with multi-currency support.',
-      image: '/GvDash.png',
+      image: '/assets/images/GvDash.png',
       technologies: ['Node.js', 'Express', 'MongoDB']
     },
     {
       id: 'sewnex',
       title: 'Sewnex',
       description: 'Business management platform for textile industry.',
-      image: '/SewDash.png',
+      image: '/assets/images/SewDash.png',
       technologies: ['Node.js', 'Express', 'MongoDB']
     }
   ];
@@ -212,30 +224,37 @@ const Home = () => {
             {/* CTA Buttons */}
             <div className="flex flex-wrap gap-4 pt-4">
               <button
-                onClick={handleDownloadResume}
+                onClick={handleDownload}
                 disabled={isDownloading}
-                className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 
-                  transition-colors duration-300 font-medium text-lg flex items-center gap-2"
+                className="text-white px-6 py-3 rounded-lg bg-gradient-to-r from-blue-500 
+                  to-blue-600 hover:from-blue-600 hover:to-blue-700 transition-colors duration-300 
+                  font-medium text-lg flex items-center gap-2 disabled:opacity-50"
               >
                 {isDownloading ? (
-                  <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                  <>
+                    <span>Downloading...</span>
+                    <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                  </>
                 ) : (
-                  <FaDownload />
+                  <>
+                    Resume
+                    <FaDownload className="text-base" />
+                  </>
                 )}
-                {isDownloading ? 'Downloading...' : 'Download CV'}
               </button>
+              {downloadError && (
+                <p className="text-red-500 text-sm mt-2">{downloadError}</p>
+              )}
               <Link
                 to="/contact"
                 className="px-6 py-3 border-2 border-blue-400 text-blue-400 rounded-lg 
-                  hover:bg-blue-400 hover:text-white transition-colors duration-300 font-medium text-lg"
+                  hover:bg-blue-400 hover:text-white transition-colors duration-300 
+                  font-medium text-lg flex items-center gap-2"
               >
                 Contact Me
+                <FaArrowRight className="text-base" />
               </Link>
             </div>
-
-            {downloadError && (
-              <p className="text-red-500 text-sm">{downloadError}</p>
-            )}
 
             {/* Social Links */}
             <div className="flex gap-6 pt-4">
@@ -294,7 +313,7 @@ const Home = () => {
                     className="w-full object-cover object-top"
                     style={{ height: '100%' }}
                     onError={(e) => {
-                      e.target.src = '/placeholder.jpg';
+                      e.target.src = '/images/placeholder.jpg';
                       e.target.onerror = null;
                     }}
                   />

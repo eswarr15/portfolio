@@ -49,25 +49,25 @@ const Achievements = () => {
         id: 'ds-cert',
         title: 'Data Science with Python Bootcamp Certificate',
         description: 'Comprehensive certification in modern web development technologies including Node.js, Express, MongoDB, and cloud infrastructure.',
-        pdfPath: '/DSA.pdf'
+        pdfPath: '/assets/pdf/DSA.pdf'
       },
       {
         id: 'react-cert',
         title: 'React Bootcamp Certificate',
         description: 'Advanced certification in backend development focusing on scalable architectures, API design, and database optimization.',
-        pdfPath: '/React.pdf'
+        pdfPath: '/assets/pdf/React.pdf'
       },
       {
         id: 'node-cert',
         title: 'Backend Development Specialization',
         description: 'Advanced certification in backend development focusing on scalable architectures, API design, and database optimization.',
-        pdfPath: '/Node.pdf'
+        pdfPath: '/assets/pdf/Node.pdf'
       },
       {
         id: 'sql-cert',
         title: 'Backend Development Specialization',
         description: 'Advanced certification in backend development focusing on scalable architectures, API design, and database optimization.',
-        pdfPath: '/Sql.pdf'
+        pdfPath: '/assets/pdf/Sql.pdf'
       }
     ]
   };
@@ -111,12 +111,16 @@ const Achievements = () => {
                     {/* PDF Preview - Left Side */}
                     <div className="w-full md:w-1/2">
                       <div className="w-full h-[300px] rounded-lg overflow-hidden">
-                        <embed
-                          src={`${cert.pdfPath}#toolbar=0&navpanes=0&scrollbar=0`}
+                        <object
+                          data={cert.pdfPath}
                           type="application/pdf"
                           className="w-full h-full"
                           style={{ pointerEvents: 'none' }}
-                        />
+                        >
+                          <p>Your browser does not support PDFs. 
+                            <a href={cert.pdfPath}>Download the PDF</a>.
+                          </p>
+                        </object>
                       </div>
                     </div>
 

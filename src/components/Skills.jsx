@@ -2,8 +2,9 @@ import { motion } from 'framer-motion';
 import { FaNodeJs, FaAws, FaDocker, FaLinux, FaGithub } from 'react-icons/fa';
 import { 
   SiExpress, SiMongodb, SiPostgresql, SiMysql,
-  SiJenkins, SiNginx, SiPostman, SiJira, SiJest, SiMocha, SiChai,
-  SiRedis, SiVisualstudiocode, SiSwagger, SiJsonwebtokens, SiAuth0
+  SiJenkins, SiNginx, SiPostman, SiJira, SiJest, 
+  SiMocha, SiChai, SiRedis, SiJsonwebtokens, 
+  SiSwagger, SiAuth0
 } from 'react-icons/si';
 import { VscCode } from 'react-icons/vsc';
 import PageTransition from './common/PageTransition';

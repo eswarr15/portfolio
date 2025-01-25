@@ -11,7 +11,7 @@ const About = () => {
     try {
       setIsDownloading(true);
       setDownloadError(null);
-      const response = await fetch('/Mohammed Thaha CV.pdf');
+      const response = await fetch('/assets/pdf/Mohammed_Thaha_Resume.pdf');
       if (!response.ok) {
         throw new Error('Failed to fetch resume');
       }
@@ -67,7 +67,7 @@ const About = () => {
             >
               <div className="absolute inset-0 bg-blue-500 rounded-xl rotate-6 group-hover:rotate-12 transition-transform duration-300"></div>
               <img
-                src="/profile_pic.jpg"
+                src="/assets/images/profile_pic.jpg"
                 alt="Mohammed Thaha"
                 className="w-64 h-64 object-cover rounded-xl relative z-10 group-hover:scale-[1.02] transition-transform duration-300"
               />
