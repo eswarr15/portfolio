@@ -21,8 +21,6 @@ function App() {
           <Route path="/projects" element={<Projects />} />
           <Route path="/achievements" element={<Achievements />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/Portfolio" element={<Navigate to="/" replace />} />
-          {/* Catch all unknown routes and redirect to home */}
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </div>

@@ -1,5 +1,5 @@
 export const getAssetPath = (path) => {
   // For GitHub Pages deployment
-  const basePath = process.env.PUBLIC_URL || '';
+  const basePath = '/Portfolio';
   return `${basePath}${path}`;
 };
