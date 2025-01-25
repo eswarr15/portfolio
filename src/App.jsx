@@ -14,7 +14,7 @@ function App() {
       <div>
         <Navbar />
         <Routes>
-          <Route path="/Portfolio" element={<Home />} />
+          <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/skills" element={<Skills />} />
           <Route path="/experience" element={<Experience />} />
@@ -22,6 +22,8 @@ function App() {
           <Route path="/achievements" element={<Achievements />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/Portfolio" element={<Navigate to="/" replace />} />
+          {/* Catch all unknown routes and redirect to home */}
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </div>
     </Router>

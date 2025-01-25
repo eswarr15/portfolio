@@ -11,7 +11,7 @@ const Navbar = () => {
   const location = useLocation();
 
   const navItems = [
-    { path: '/Portfolio', label: 'Home' },
+    { path: '/', label: 'Home' },
     { path: '/about', label: 'About' },
     { path: '/skills', label: 'Skills' },
     { path: '/experience', label: 'Experience' },
