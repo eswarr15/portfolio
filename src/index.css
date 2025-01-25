@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import url('https://api.fontshare.com/v2/css?f[]=clash-display@700&display=swap');
+@import url('https://api.fontshare.com/v2/css?f[]=general-sans@500,600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply antialiased;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-900;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-blue-500/50 rounded-full hover:bg-blue-400;
+}
+
+/* Carousel Styles */
+.slick-slider {
+  margin: 0;
+  width: 100vw;
+}
+
+.slick-slide {
+  padding: 0 8px;
+}
+
+.slick-slide > div {
+  display: flex;
+  justify-content: center;
+}
+
+.slick-track {
+  display: flex !important;
+}
+
+/* Hide arrows */
+.slick-prev,
+.slick-next {
+  display: none !important;
+}
+
+/* Optional: Remove dots if they appear */
+.slick-dots {
+  display: none !important;
+}
+
+/* Ensure text alignment */
+.slick-slide > div > div {
+  display: inline-block;
+  vertical-align: top;
+  text-align: center;
+}
+
+.page-transition-enter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.page-transition-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.page-transition-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.page-transition-exit-active {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 300ms, transform 300ms;
+}
+
+/* Add custom font classes */
+.font-space-grotesk {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.font-clash-display {
+  font-family: 'Clash Display', sans-serif;
+}
+
+.font-general-sans {
+  font-family: 'General Sans', sans-serif;
+}
+
+/* Add more professional transitions */
+.hover-effect {
+  @apply transition-all duration-300 ease-in-out;
+}
+
+/* Add consistent spacing */
+.section-padding {
+  @apply py-16 md:py-24;
+}
+
+/* Add professional shadows */
+.card-shadow {
+  @apply shadow-lg shadow-blue-500/10 hover:shadow-blue-500/20;
+}
