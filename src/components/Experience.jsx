@@ -6,35 +6,64 @@ const Experience = () => {
     {
       id: 'cygnonex-2024',
       company: "Cygnonex Innovation Pvt Ltd",
-      role: "Junior Full Stack Developer",
-      period: "March 2024 - Present",
+      role: "Junior Cloud Engineer",
+      period: "Internship: 3 months | Permanent: Present (from Oct 2024)",
       achievements: [
         {
           id: 'cygnonex-achievement-1',
-          text: "Developing backend infrastructure for BillBizz ERP platform"
+          text: "Configuring and managing cloud infrastructure using AWS"
         },
         {
           id: 'cygnonex-achievement-2',
-          text: "Implementing security features including AWS Cognito and JWT authentication"
+          text: "Collaborated with DevOps and cloud teams to deploy and optimize cloud solutions"
         },
         {
           id: 'cygnonex-achievement-3',
-          text: "Working with CI/CD pipelines using Jenkins"
+          text: "Set up and maintained Jenkins CI/CD pipelines"
         },
         {
           id: 'cygnonex-achievement-4',
-          text: "Optimizing API performance and infrastructure costs"
+          text: "Automated infrastructure deployments with Terraform"
         },
         {
           id: 'cygnonex-achievement-5',
-          text: "Collaborating with team members on development tasks"
+          text: "Managed AWS services including EC2, ECS, and EKS for testing"
         },
         {
           id: 'cygnonex-achievement-6',
-          text: "Learning and implementing best practices in software development"
+          text: "Managed Microsoft 365 workspaces and Entra ID for user authentication"
+        },
+        {
+          id: 'cygnonex-achievement-7',
+          text: "Optimized cloud resource usage for cost efficiency while monitoring AWS payments"
         }
       ],
-      techStack: ["Node.js", "Express.js", "MongoDB", "AWS", "Jenkins", "JWT", "AWS Cognito"]
+      techStack: ["Azure", "AWS", "Hostinger", "Jenkins", "Terraform", "Ansible", "GitHub", "MongoDB"]
+    },
+    {
+      id: 'jio-2024',
+      company: "Jio Platforms Limited (Reliance)",
+      role: "Cloud and DevOps Trainee",
+      period: "Internship: Oct 2023 to Jun 2024",
+      achievements: [
+        {
+          id: 'jio-achievement-1',
+          text: "Configured and oversaw CI/CD pipelines utilizing Azure DevOps"
+        },
+        {
+          id: 'jio-achievement-2',
+          text: "Worked with CI/CD team to deploy automation strategies to streamline software development"
+        },
+        {
+          id: 'jio-achievement-3',
+          text: "Set up continuous integration workflows to ensure code quality"
+        },
+        {
+          id: 'jio-achievement-4',
+          text: "Implemented continuous deployment pipelines for efficient release management"
+        }
+      ],
+      techStack: ["Azure DevOps", "CI/CD", "Automation", "Software Development"]
     }
   ];
 

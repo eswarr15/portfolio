@@ -12,22 +12,22 @@ const About = () => {
     try {
       setIsDownloading(true);
       setDownloadError(null);
-      const resumePath = getAssetPath('/assets/pdf/Mohammed_Thaha_Resume.pdf');
+      const resumePath = getAssetPath('/assets/pdf/ESWAR K CLOUD RESUME (2).pdf');
       const response = await fetch(resumePath, {
         headers: {
           'Content-Type': 'application/pdf',
         },
       });
-      
+
       if (!response.ok) {
         throw new Error('Failed to fetch resume');
       }
-      
+
       const blob = await response.blob();
       const url = window.URL.createObjectURL(blob);
       const link = document.createElement('a');
       link.href = url;
-      link.download = 'Mohammed Thaha CV.pdf';
+      link.download = 'ESWAR K CV.pdf';
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
@@ -76,7 +76,7 @@ const About = () => {
               <div className="absolute inset-0 bg-blue-500 rounded-xl rotate-6 group-hover:rotate-12 transition-transform duration-300"></div>
               <img
                 src={getAssetPath('/assets/images/profile_pic.jpg')}
-                alt="Mohammed Thaha"
+                alt="ESWAR K"
                 className="w-64 h-64 object-cover rounded-xl relative z-10"
                 onError={(e) => {
                   e.target.src = getAssetPath('/assets/images/placeholder.jpg');
@@ -89,13 +89,13 @@ const About = () => {
             <div className="flex-1">
               <div className="text-xl text-gray-300 space-y-4">
                 <p>
-                  I am a passionate Backend Engineer with expertise in DevOps practices and cloud technologies.
-                  With a strong foundation in building scalable applications and implementing robust infrastructure solutions,
-                  I specialize in creating efficient, maintainable, and secure systems.
+                  I am a Cloud and DevOps Engineer, specializing in designing scalable cloud infrastructures using AWS, Azure, GCP, and Hostinger. 
+                  I automate deployment pipelines and optimize workflows with various DevOps tools. With expertise in cloud technologies and DevOps best practices,
+                  I focus on building efficient, secure, and reliable systems that enhance software delivery and operational performance.
                 </p>
                 <p>
-                  My journey in technology has been driven by a constant desire to learn and adapt to emerging technologies,
-                  particularly in the realm of cloud computing and microservices architecture.
+                  My journey in technology has been driven by a constant desire to learn and adapt to emerging technologies, 
+                  particularly in the realm of cloud computing, DevOps practices, and scalable infrastructure solutions.
                 </p>
               </div>
             </div>
@@ -112,11 +112,11 @@ const About = () => {
               <ul className="list-none space-y-3 text-gray-300">
                 <li className="flex items-center gap-2">
                   <FaServer className="text-blue-400" />
-                  Develop full-stack applications using MERN technology
+                  Work with AWS and Azure cloud technologies to design and manage scalable infrastructures
                 </li>
                 <li className="flex items-center gap-2">
                   <FaServer className="text-blue-400" />
-                  Design and implement scalable backend architectures
+                  Implement and automate CI/CD pipelines for seamless application deployment
                 </li>
                 <li className="flex items-center gap-2">
                   <FaServer className="text-blue-400" />
@@ -128,7 +128,7 @@ const About = () => {
                 </li>
                 <li className="flex items-center gap-2">
                   <FaServer className="text-blue-400" />
-                  Database design and optimization
+                  Utilize DevOps tools to enhance infrastructure management and optimization 
                 </li>
               </ul>
             </div>
@@ -145,29 +145,40 @@ const About = () => {
                   <div className="flex items-start gap-2 mt-2">
                     <FaBriefcase className="mt-1 text-blue-400" />
                     <div>
-                      <p className="font-medium">Junior Full Stack Developer</p>
+                      <p className="font-medium">Junior Cloud Engineer</p>
                       <p className="text-sm">Cygnonex Innovation Pvt Ltd</p>
-                      <p className="text-sm text-gray-400">March 2024 - Present</p>
+                      <p className="text-sm text-gray-400">October 2024 - Present</p>
                     </div>
                   </div>
                 </div>
-                
+
+                {/* Added Experience */}
+                <div>
+                  <h4 className="font-semibold text-white"></h4>
+                  <div className="flex items-start gap-2 mt-2">
+                    <FaBriefcase className="mt-1 text-blue-400" />
+                    <div>
+                      <p className="font-medium">Jio Platforms Limited</p>
+                      <p className="text-sm">Cloud and DevOps Intern</p>
+                      <p className="text-sm text-gray-400">October 2023 - June 2024</p>
+                    </div>
+                  </div>
+                </div>
+
                 <div>
                   <h4 className="font-semibold text-white">Education</h4>
                   <div className="flex items-start gap-2 mt-2">
                     <FaGraduationCap className="mt-1 text-blue-400" />
                     <div>
                       <p className="font-medium">Bachelor's Degree in Computer Science</p>
-                      <p className="text-sm">Valia Koonambaikulathamma College of Engineering & Technology</p>
-                      <p className="text-sm text-gray-400">2019 - 2023</p>
+                      <p className="text-sm">E.G.S Pillay College of Engineering </p>
+                      <p className="text-sm text-gray-400">2020 - 2024</p>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-
-          
 
           {/* Work Philosophy */}
           <div className="mt-12">
@@ -176,9 +187,9 @@ const About = () => {
               Work Philosophy
             </h3>
             <p className="text-gray-300">
-              I believe in the power of collaboration and continuous learning. I strive to create a positive and inclusive work environment,
-              where everyone's voice is heard and valued. I am committed to staying updated with the latest technologies and best practices,
-              and I am always eager to learn from my colleagues and mentors.
+              I believe in the power of collaboration and continuous learning. I strive to foster a positive and inclusive work culture where every voice is valued.
+              Easy to learn new things and adapt to different people's approaches, I am committed to staying up-to-date with the latest technologies and best practices, 
+              always eager to learn from my colleagues and mentors.
             </p>
           </div>
 

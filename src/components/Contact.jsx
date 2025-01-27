@@ -9,22 +9,22 @@ const Contact = () => {
       id: 'email',
       icon: <FiMail className="text-2xl" />,
       title: 'Email',
-      value: 'thahad2@gmail.com',
-      link: 'mailto:thahad2@gmail.com'
+      value: 'k.eswar7045@gmail.com',
+      link: 'mailto:k.eswar7045@gmail.com'
     },
     {
       id: 'linkedin',
       icon: <FiLinkedin className="text-2xl" />,
       title: 'LinkedIn',
       value: 'Connect with me',
-      link: 'https://www.linkedin.com/in/mohammed-thaha-dawood-4b2908291/'
+      link: 'https://www.linkedin.com/in/eswarkrishnamoorthy/'
     },
     {
       id: 'github',
       icon: <FiGithub className="text-2xl" />,
       title: 'GitHub',
       value: 'View my repositories',
-      link: 'https://github.com/MohdThaha'
+      link: 'https://github.com/eswarr15'
     }
   ];
 

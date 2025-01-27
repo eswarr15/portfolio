@@ -8,7 +8,7 @@ const Github = () => {
   const [repos, setRepos] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const username = 'MohdThaha'; // Replace with your GitHub username
+  const username = 'eswarr15'; // Replace with your GitHub username
 
   useEffect(() => {
     const fetchGithubData = async () => {

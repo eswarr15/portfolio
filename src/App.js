@@ -37,7 +37,7 @@ const AnimatedRoutes = () => {
 function App() {
   useEffect(() => {
     // Update the title and favicon
-    document.title = "MTD | Backend Engineer";
+    document.title = "Eswar | Cloud Engineer";
     
     // Update favicon color based on system theme
     const updateFaviconColor = (e) => {

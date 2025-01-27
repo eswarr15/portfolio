@@ -42,12 +42,12 @@ const Navbar = () => {
           <Link to="/" className="flex items-center space-x-2">
             <div className="flex items-center">
               <span className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-blue-600 text-transparent bg-clip-text">
-                MTD
+                Ek
               </span>
               <div className="h-6 w-px bg-gray-600 mx-3"></div>
               <div className="flex flex-col">
-                <span className="text-sm font-medium text-gray-300">Mohammed</span>
-                <span className="text-xs text-gray-400">Backend Engineer</span>
+                <span className="text-sm font-medium text-gray-300">Eswar</span>
+                <span className="text-xs text-gray-400">Cloud Engineer</span>
               </div>
             </div>
           </Link>

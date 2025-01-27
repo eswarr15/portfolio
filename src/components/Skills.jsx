@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+
 import { FaNodeJs, FaAws, FaDocker, FaLinux, FaGithub } from 'react-icons/fa';
 import { 
   SiExpress, SiMongodb, SiPostgresql, SiMysql,
@@ -15,10 +16,6 @@ const Skills = () => {
       { id: 'nodejs', icon: <FaNodeJs className="text-green-500" />, name: 'Node.js' },
       { id: 'express', icon: <SiExpress />, name: 'Express.js' },
       { id: 'mongodb', icon: <SiMongodb className="text-green-500" />, name: 'MongoDB' },
-      { id: 'postgresql', icon: <SiPostgresql className="text-blue-400" />, name: 'PostgreSQL' },
-      { id: 'mysql', icon: <SiMysql className="text-blue-500" />, name: 'MySQL' },
-      { id: 'redis', icon: <SiRedis className="text-red-500" />, name: 'Redis' },
-      { id: 'rest', icon: <SiNginx className="text-green-500" />, name: 'RESTful APIs' }
     ],
     devops: [
       { id: 'aws', icon: <FaAws className="text-orange-500" />, name: 'AWS' },
@@ -31,8 +28,6 @@ const Skills = () => {
     tools: [
       { id: 'postman', icon: <SiPostman className="text-orange-500" />, name: 'Postman' },
       { id: 'jira', icon: <SiJira className="text-blue-500" />, name: 'Jira' },
-      { id: 'vscode', icon: <VscCode className="text-blue-400" />, name: 'VS Code' },
-      { id: 'swagger', icon: <SiSwagger className="text-green-400" />, name: 'Swagger' }
     ],
     security: [
       { id: 'jwt', icon: <SiJsonwebtokens className="text-pink-500" />, name: 'JWT' },

@@ -47,10 +47,10 @@ const Achievements = () => {
     ],
     professional_certs: [
       {
-        id: 'ds-cert',
-        title: 'Data Science with Python Bootcamp Certificate',
-        description: 'Comprehensive certification in modern web development technologies including Node.js, Express, MongoDB, and cloud infrastructure.',
-        pdfPath: getAssetPath('/assets/pdf/DSA.pdf')
+        id: 'az900-cert',
+        title: 'Microsoft AZ-900 Certification',
+        description: 'Comprehensive certification in Microsoft Azure fundamentals, covering cloud concepts, core Azure services, pricing, and support.',
+        pdfPath: getAssetPath('/assets/pdf/az900.PDF')
       },
       {
         id: 'react-cert',

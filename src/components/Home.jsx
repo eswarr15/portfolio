@@ -25,7 +25,7 @@ const Home = () => {
     setDownloadError(null);
     
     try {
-      const resumePath = getAssetPath('/assets/pdf/Mohammed_Thaha_Resume.pdf');
+      const resumePath = getAssetPath('/assets/pdf/ESWAR K CLOUD RESUME (2).pdf');
       const response = await fetch(resumePath, {
         headers: {
           'Content-Type': 'application/pdf',
@@ -40,7 +40,7 @@ const Home = () => {
       const url = window.URL.createObjectURL(blob);
       const link = document.createElement('a');
       link.href = url;
-      link.download = 'Mohammed Thaha CV.pdf';
+      link.download = 'Eswar K CV.pdf';
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
@@ -59,19 +59,19 @@ const Home = () => {
       id: 'github',
       name: 'GitHub',
       icon: <FiGithub className="w-6 h-6" />,
-      url: 'https://github.com/MohdThaha',
+      url: 'https://github.com/eswarr15',
     },
     {
       id: 'linkedin',
       name: 'LinkedIn',
       icon: <FiLinkedin className="w-6 h-6" />,
-      url: 'https://www.linkedin.com/in/mohammed-thaha-dawood-4b2908291/',
+      url: 'https://www.linkedin.com/in/eswarkrishnamoorthy/',
     },
     {
       id: 'email',
       name: 'Email',
       icon: <FiMail className="w-6 h-6" />,
-      url: 'mailto:thahad2@gmail.com',
+      url: 'mailto:k.eswar7045@gmail.com',
     },
   ];
 
@@ -80,27 +80,27 @@ const Home = () => {
     { id: 'nodejs', icon: <FaNodeJs />, name: 'Node.js', color: 'text-green-500' },
     { id: 'express', icon: <SiExpress />, name: 'Express.js', color: 'text-gray-300' },
     { id: 'mongodb', icon: <SiMongodb />, name: 'MongoDB', color: 'text-green-500' },
-    { id: 'postgresql', icon: <SiPostgresql />, name: 'PostgreSQL', color: 'text-blue-400' },
-    { id: 'mysql', icon: <SiMysql />, name: 'MySQL', color: 'text-blue-500' },
-    { id: 'redis', icon: <SiRedis />, name: 'Redis', color: 'text-red-500' },
+
     
     // Cloud & DevOps
     { id: 'aws', icon: <FaAws />, name: 'AWS', color: 'text-orange-500' },
+    { id: 'terraform', icon: <FaGithub />, name: 'Terraform', color: 'text-gray-300' },
     { id: 'docker', icon: <FaDocker />, name: 'Docker', color: 'text-blue-500' },
     { id: 'jenkins', icon: <SiJenkins />, name: 'Jenkins', color: 'text-red-500' },
     { id: 'linux', icon: <FaLinux />, name: 'Linux', color: 'text-yellow-500' },
+    { id: 'ansible', icon: <FaGithub />, name: 'Ansible', color: 'text-gray-300' },
+    { id: 'hostinger', icon: <FaGithub />, name: 'Hostinger', color: 'text-green-500' },
+    { id: 'api', icon: <FaGithub />, name: 'API', color: 'text-blue-400' },
+    { id: 'gcp', icon: <FaGithub />, name: 'GCP', color: 'text-blue-500' },
     { id: 'nginx', icon: <SiNginx />, name: 'Nginx', color: 'text-green-500' },
     
     // Development Tools
     { id: 'git', icon: <FaGithub />, name: 'Git', color: 'text-gray-300' },
-    { id: 'postman', icon: <SiPostman />, name: 'Postman', color: 'text-orange-500' },
-    { id: 'jira', icon: <SiJira />, name: 'Jira', color: 'text-blue-500' },
     { id: 'vscode', icon: <VscCode />, name: 'VS Code', color: 'text-blue-400' },
     
     // Security & Testing
-    { id: 'jwt', icon: <SiJsonwebtokens />, name: 'JWT', color: 'text-pink-500' },
-    { id: 'jest', icon: <SiJest />, name: 'Jest', color: 'text-red-600' },
-    { id: 'swagger', icon: <SiSwagger />, name: 'Swagger', color: 'text-green-400' }
+    { id: 'sonarqube', icon: <SiJenkins />, name: 'SonarQube', color: 'text-orange-500' },
+    { id: 'owasp', icon: <SiJenkins />, name: 'OWASP', color: 'text-blue-500' }
   ];
 
   const sliderSettings = {
@@ -197,23 +197,23 @@ const Home = () => {
                 transition={{ delay: 0.2 }}
                 className="text-blue-400 text-xl md:text-2xl font-medium font-space-grotesk"
               >
-                <span className="text-gray-300">Hello, I'm</span> Mohammed Thaha
+                <span className="text-gray-300">Hello, I'm</span> Eswar k
               </motion.h2>
               <div className="flex items-center gap-4">
                 <div className="h-1 w-24 bg-blue-500/50 rounded"></div>
-                <span className="text-gray-400 text-sm">Backend Engineer</span>
+                <span className="text-gray-400 text-sm">Cloud And Devops Engineer</span>
               </div>
             </div>
 
             {/* Dynamic Title */}
             <h1 className="text-5xl md:text-7xl font-bold text-white font-clash-display leading-tight">
-              Crafting <span className="text-blue-400">Enterprise</span> Solutions
+            Designing And Managing<span className="text-blue-400"> Cloud Infrastructure</span> Implementing Cloud Services
             </h1>
 
             {/* Enhanced Description */}
             <p className="max-w-2xl text-gray-300 text-lg md:text-xl font-general-sans leading-relaxed">
-              Junior Full Stack Developer specializing in ERP systems and business solutions. 
-              Building secure, scalable applications with modern technologies and best practices.
+            Junior Cloud and DevOps Engineer specializing in cloud infrastructure and automation. 
+            Focused on building and maintaining scalable, secure cloud environments and optimizing development workflows using modern DevOps practices.
             </p>
 
             {/* CTA Buttons */}
