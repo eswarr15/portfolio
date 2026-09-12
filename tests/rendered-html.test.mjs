@@ -29,7 +29,7 @@ test("renders the complete DevOps engineering platform", async () => {
   assert.match(html, />Troubleshooting</);
   assert.match(html, /Certified Kubernetes Administrator/);
   assert.match(html, /March 1, 2026/);
-  assert.match(html, /Independent public portfolio/);
+  assert.doesNotMatch(html, /Independent public portfolio/);
   assert.doesNotMatch(html, /Lorem Ipsum|Your site is taking shape|Building your site/i);
 });
 
@@ -44,7 +44,6 @@ test("keeps public content safe and required downloads available", async () => {
     access(new URL("public/og.png", root)),
   ]);
 
-  assert.match(page, /Not affiliated with or endorsed by any employer or client/);
   assert.match(page, /does not reproduce or document/);
   assert.match(terminal, /Simulation only/);
   assert.match(terminal, /demo-cluster/);

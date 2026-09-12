@@ -277,15 +277,6 @@ export default function Home() {
         <span className="system-state"><i /> systems ready</span>
       </nav>
 
-      <aside className="public-safety-notice section-wrap" aria-label="Public portfolio disclosure">
-        <strong>Independent public portfolio</strong>
-        <span>
-          Not affiliated with or endorsed by any employer or client. All diagrams, commands,
-          environments, outputs and case studies are fictional or deliberately generalized.
-          No client identifiers, production topology, proprietary documents or credentials are shown.
-        </span>
-      </aside>
-
       <ModeControls />
 
       <section className="hero section-wrap" id="top">
