@@ -1,0 +1,92 @@
+{
+  "_framework-blcsuaHx.js": {
+    "file": "portfolio/_next/static/chunks/framework-blcsuaHx.js",
+    "name": "framework",
+    "imports": [
+      "_rolldown-runtime-DOKJ5Yo2.js"
+    ]
+  },
+  "_rolldown-runtime-DOKJ5Yo2.js": {
+    "file": "portfolio/_next/static/chunks/rolldown-runtime-DOKJ5Yo2.js",
+    "name": "rolldown-runtime"
+  },
+  "app/CommandLauncher.tsx": {
+    "file": "portfolio/_next/static/chunks/CommandLauncher-_V8kpAZl.js",
+    "name": "CommandLauncher",
+    "src": "app/CommandLauncher.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_framework-blcsuaHx.js"
+    ]
+  },
+  "app/ContactForm.tsx": {
+    "file": "portfolio/_next/static/chunks/ContactForm-BoUJnMGW.js",
+    "name": "ContactForm",
+    "src": "app/ContactForm.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-DOKJ5Yo2.js",
+      "_framework-blcsuaHx.js"
+    ]
+  },
+  "app/DevOpsWorkbench.tsx": {
+    "file": "portfolio/_next/static/chunks/DevOpsWorkbench-kmwY7le-.js",
+    "name": "DevOpsWorkbench",
+    "src": "app/DevOpsWorkbench.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-DOKJ5Yo2.js",
+      "_framework-blcsuaHx.js"
+    ]
+  },
+  "app/InteractiveTerminal.tsx": {
+    "file": "portfolio/_next/static/chunks/InteractiveTerminal-Ba7psEy3.js",
+    "name": "InteractiveTerminal",
+    "src": "app/InteractiveTerminal.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-DOKJ5Yo2.js",
+      "_framework-blcsuaHx.js"
+    ]
+  },
+  "app/ModeControls.tsx": {
+    "file": "portfolio/_next/static/chunks/ModeControls-_0vwetiX.js",
+    "name": "ModeControls",
+    "src": "app/ModeControls.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-DOKJ5Yo2.js",
+      "_framework-blcsuaHx.js"
+    ]
+  },
+  "node_modules/vinext/dist/shims/layout-segment-context.js": {
+    "file": "portfolio/_next/static/chunks/layout-segment-context-BqJNdwxg.js",
+    "name": "layout-segment-context",
+    "src": "node_modules/vinext/dist/shims/layout-segment-context.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-DOKJ5Yo2.js",
+      "virtual:vinext-app-browser-entry",
+      "_framework-blcsuaHx.js"
+    ]
+  },
+  "virtual:vinext-app-browser-entry": {
+    "file": "portfolio/_next/static/chunks/index-CZcVQYkn.js",
+    "name": "index",
+    "src": "virtual:vinext-app-browser-entry",
+    "isEntry": true,
+    "imports": [
+      "_rolldown-runtime-DOKJ5Yo2.js",
+      "_framework-blcsuaHx.js"
+    ],
+    "dynamicImports": [
+      "virtual:vinext-app-browser-entry",
+      "node_modules/vinext/dist/shims/layout-segment-context.js",
+      "app/CommandLauncher.tsx",
+      "app/ContactForm.tsx",
+      "app/InteractiveTerminal.tsx",
+      "app/ModeControls.tsx",
+      "app/DevOpsWorkbench.tsx"
+    ]
+  }
+}
